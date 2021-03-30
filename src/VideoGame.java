@@ -28,6 +28,7 @@ public class VideoGame
     private String developer;
     private String publisher;
     private double releasePrice;
+    private boolean earlyAccess;
     private String tags;
     
     /**************************************************************
@@ -35,19 +36,23 @@ public class VideoGame
     **************************************************************/
     
     //all necessary parameters for attributes
-    public ComicBook(String title_, 
-                     int issueNum_, 
-                     String writer_,
-                     String artist_, 
-                     String condition_, 
-                     double value_) 
+    public VideoGame(String title_, 
+                     int releaseYear_, 
+                     String genre_,
+                     String developer_, 
+                     String publisher_, 
+                     double releasePrice_,
+                     boolean earlyAccess_,
+                     String tags_) 
     {
         this.title = title_;
-        this.issueNum = issueNum_;
-        this.writer = writer_;
-        this.artist = artist_;
-        this.condition = condition_;
-        this.value = value_;
+        this.releaseYear = releaseYear_;
+        this.genre = genre_;
+        this.developer = developer_;
+        this.publisher = publisher_;
+        this.releasePrice = releasePrice_;
+        this.earlyAccess = earlyAccess_;
+        this.tags = tags_;
     }
     
     //condition and value omitted
