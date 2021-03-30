@@ -121,7 +121,6 @@ public class VideoGame
     {
         return this.title;
     }
-    
     public void setIssueNume(int issueNum_)
     {
         this.issueNum = issueNum_;
