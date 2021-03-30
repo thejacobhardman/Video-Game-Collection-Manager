@@ -28,7 +28,7 @@ public class VideoGame
     private String developer;
     private String publisher;
     private double releasePrice;
-    private boolean earlyAccess;
+    private boolean isEarlyAccess;
     private String tags;
     
     /**************************************************************
@@ -42,7 +42,7 @@ public class VideoGame
                      String developer_, 
                      String publisher_, 
                      double releasePrice_,
-                     boolean earlyAccess_,
+                     boolean isEarlyAccess_,
                      String tags_) 
     {
         this.title = title_;
@@ -51,7 +51,7 @@ public class VideoGame
         this.developer = developer_;
         this.publisher = publisher_;
         this.releasePrice = releasePrice_;
-        this.earlyAccess = earlyAccess_;
+        this.isEarlyAccess = isEarlyAccess_;
         this.tags = tags_;
     }
     
