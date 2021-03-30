@@ -30,6 +30,7 @@ public class VideoGame
     private double releasePrice;
     private boolean isEarlyAccess;
     private String tags;
+    private int iterator;
     
     /**************************************************************
     * CONSTRUCTORS                                                *
@@ -43,7 +44,8 @@ public class VideoGame
                      String publisher_, 
                      double releasePrice_,
                      boolean isEarlyAccess_,
-                     String tags_) 
+                     String tags_,
+                     int iterator_) 
     {
         this.title = title_;
         this.releaseYear = releaseYear_;
@@ -53,6 +55,7 @@ public class VideoGame
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = isEarlyAccess_;
         this.tags = tags_;
+        this.iterator = iterator_;
     }
     
     //publisher, isEarlyAccess and tags omitted
@@ -192,26 +195,35 @@ public class VideoGame
     //Return a string with only the title and issue number
     public String description() 
     {
-        return this.title + " Issue #" + this.issueNum;
+        return this.title + " released in " + this.releaseYear + ".";
     }
     
     //Return the entire object as a single String
     public String toString()
     {
-        String result = this.title+" #" + this.issueNum;
-        if (this.writer!=null)
-        {
-            result += "\n  Written by: "+this.writer;
-            result += "\n  Art by: "+this.artist;
+        String result = this.title + ".";
+        result += "\nReleased in: " + this.releaseYear + ".";
+        result += "\nGenre: " + this.genre + ".";
+        
+        if (this.developer == this.publisher) {
+        	result += "\nDeveloped and published by: " + this.developer + ".";
+        } else {
+        	result += "\nDeveloped by: " + this.developer + ".";
+        	result += "\nPublished by: " + this.publisher + ".";
         }
-        if (this.condition!=null)
-        {
-            result += "\n  Condition by: "+this.condition;
+        
+        result += "\nOriginal price at release: " + this.releasePrice + ".";
+        
+        if (this.isEarlyAccess == true) {
+        	result += "\nIs an early access title.";
+        } else {
+        	result += "\nIs not an early access title.";
         }
-        if (this.value!=0.00)
-        {
-            result += "\n  Value by: "+this.value;
+        
+        if (this.tags != null) {
+        	result += "\n Tags: " + this.tags + ".";
         }
+        
         result += "\n";
         return result;
     }
@@ -219,9 +231,27 @@ public class VideoGame
     /**************************************************************
     * OTHER METHODS                                               *
     **************************************************************/
-    public ComicBook createNextInSeries()
+    
+//  private String title;
+//  private int releaseYear;
+//  private String genre;
+//  private String developer;
+//  private String publisher;
+//  private double releasePrice;
+//  private boolean isEarlyAccess;
+//  private String tags;
+    public VideoGame createSequel()
     {
-        return new ComicBook(this.title, this.issueNum+1);
+    	String title_ = this.title + " " + this.iterator + 1;
+        return new VideoGame(title_,
+        					 this.releaseYear,
+        					 this.genre,
+        					 this.developer,
+        					 this.publisher,
+        					 this.releasePrice,
+        					 this.isEarlyAccess,
+        					 this.tags,
+        					 this.iterator);
     }
     
 }
