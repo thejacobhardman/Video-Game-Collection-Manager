@@ -55,43 +55,58 @@ public class VideoGame
         this.tags = tags_;
     }
     
-    //condition and value omitted
-    public ComicBook(String title_, 
-                     int issueNum_, 
-                     String writer_, 
-                     String artist_) 
+    //publisher, isEarlyAccess and tags omitted
+    public VideoGame(String title_, 
+    				 int releaseYear_, 
+    				 String genre_,
+                     String developer_, 
+                     double releasePrice_) 
     {
-        this(title_, 
-             issueNum_, 
-             writer_, 
-             artist_, 
-             null,      // condition omitted
-             0.00);     // value omitted
+    	this.title = title_;
+        this.releaseYear = releaseYear_;
+        this.genre = genre_;
+        this.developer = developer_;
+        this.publisher = developer_;
+        this.releasePrice = releasePrice_;
+        this.isEarlyAccess = false;
+        this.tags = null;
     }
     
-    //only series name and issue number
-    public ComicBook(String title_, int issueNum_) 
+    //publisher and isEarlyAccess omitted
+    public VideoGame(String title_, 
+    				 int releaseYear_, 
+    				 String genre_,
+    				 String developer_, 
+    				 double releasePrice_,
+    				 String tags_) 
     {
-        this(title_,
-             issueNum_,
-             null,      // writer omitted
-             null,      // artist omitted
-             null,      // condition omitted
-             0.00);     // value omitted
+    	this.title = title_;
+        this.releaseYear = releaseYear_;
+        this.genre = genre_;
+        this.developer = developer_;
+        this.publisher = developer_;
+        this.releasePrice = releasePrice_;
+        this.isEarlyAccess = false;
+        this.tags = tags_;
     }
     
-    //writer and artist omitted
-    public ComicBook(String title_, 
-                     int issueNum_, 
-                     String condition_, 
-                     double value_) 
+    //publisher omitted
+    public VideoGame(String title_, 
+    				 int releaseYear_, 
+    				 String genre_,
+    				 String developer_, 
+    				 double releasePrice_,
+    				 boolean isEarlyAccess_,
+    				 String tags_) 
     {
-        this(title_,
-             issueNum_,
-             null,       // writer omitted
-             null,       // artist omitted
-             condition_, 
-             value_);    
+    	this.title = title_;
+        this.releaseYear = releaseYear_;
+        this.genre = genre_;
+        this.developer = developer_;
+        this.publisher = developer_;
+        this.releasePrice = releasePrice_;
+        this.isEarlyAccess = isEarlyAccess_;
+        this.tags = tags_;   
     }
     
     /**************************************************************
