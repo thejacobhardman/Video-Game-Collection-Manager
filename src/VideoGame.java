@@ -121,49 +121,68 @@ public class VideoGame
     {
         return this.title;
     }
-    public void setIssueNume(int issueNum_)
+    
+    public void setReleaseYear(int releaseYear_)
     {
-        this.issueNum = issueNum_;
+        this.releaseYear = releaseYear_;
     }
-    public int getIssueNum()
+    public int getReleaseYear()
     {
-        return this.issueNum;
+        return this.releaseYear;
     }
     
-    public void setWriter(String writer_)
+    public void setGenre(String genre_)
     {
-        this.writer = writer_;
+        this.genre = genre_;
     }
-    public String getWriter()
+    public String getGenre()
     {
-        return this.writer;
-    }
-    
-    public void setArtist(String artist_)
-    {
-        this.artist = artist_;
-    }
-    public String getArtist()
-    {
-        return this.artist;
+        return this.genre;
     }
     
-    public void setCondition(String condition_)
+    public void setDeveloper(String developer_)
     {
-        this.condition = condition_;
+        this.developer = developer_;
     }
-    public String getCondition()
+    public String getDeveloper()
     {
-        return this.condition;
+        return this.developer;
     }
     
-    public void setValue(double value_)
+    public void setPublisher(String publisher_)
     {
-        this.value = value_;
+        this.publisher = publisher_;
     }
-    public double getValue()
+    public String getPublisher()
     {
-        return this.value;
+        return this.publisher;
+    }
+    
+    public void setReleasePrice(double releasePrice_)
+    {
+        this.releasePrice = releasePrice_;
+    }
+    public double getReleasePrice()
+    {
+        return this.releasePrice;
+    }
+    
+    public void setIsEarlyAccess(boolean isEarlyAccess_) 
+    {
+    	this.isEarlyAccess = isEarlyAccess_;
+    }
+    public boolean getIsEarlyAccess()
+    {
+    	return this.isEarlyAccess;
+    }
+    
+    public void setTags(String tags_)
+    {
+    	this.tags = tags_;
+    }
+    public String getTags()
+    {
+    	return this.tags;
     }
     
     /**************************************************************
