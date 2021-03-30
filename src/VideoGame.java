@@ -17,17 +17,18 @@
 *                                                                     *
 **********************************************************************/
 
-public class ComicBook 
+public class VideoGame
 {
     /**************************************************************
     * ATTRIBUTES                                                  *
     **************************************************************/
     private String title;
-    private int issueNum;
-    private String writer;
-    private String artist;
-    private String condition;
-    private double value;
+    private int releaseYear;
+    private String genre;
+    private String developer;
+    private String publisher;
+    private double releasePrice;
+    private String tags;
     
     /**************************************************************
     * CONSTRUCTORS                                                *
