@@ -17,6 +17,7 @@
 *                                                                     *
 **********************************************************************/
 
+import java.text.MessageFormat;
 import java.util.*;
 
 public class VideoGameCollection 
@@ -94,13 +95,57 @@ public class VideoGameCollection
         this.games.add(newGame);
     }
     
-    public void SearchByTitle()
+    public void SearchByTitle(String title)
     {
+    	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
+        for (int i = 0; i < this.games.size(); i++) {
+        	if (this.getGame(i).getTitle() == title) {
+        		gamesFound.add(this.getGame(i));
+        	}
+        }
         
+        System.out.println(MessageFormat.format("\nThere were {0} games found with the title: {1}.\n", gamesFound.size(), title));
+        System.out.println("--------------------------------------------");
+        for (int i = 0; i < gamesFound.size(); i++)
+        {
+            System.out.println((i+1)+": " + gamesFound.get(i).toString());
+        }
+        System.out.println("--------------------------------------------");
     }
     
-    public void SearchByCreator()
+    public void SearchByDeveloper(String developer)
     {
+    	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
+        for (int i = 0; i < this.games.size(); i++) {
+        	if (this.getGame(i).getDeveloper() == developer) {
+        		gamesFound.add(this.getGame(i));
+        	}
+        }
         
+        System.out.println(MessageFormat.format("\nThere were {0} games found that were made by: {1}.\n", gamesFound.size(), developer));
+        System.out.println("--------------------------------------------");
+        for (int i = 0; i < gamesFound.size(); i++)
+        {
+            System.out.println((i+1)+": " + gamesFound.get(i).toString());
+        }
+        System.out.println("--------------------------------------------");
+    }
+    
+    public void SearchByGenre(String genre)
+    {
+    	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
+        for (int i = 0; i < this.games.size(); i++) {
+        	if (this.getGame(i).getGenre() == genre) {
+        		gamesFound.add(this.getGame(i));
+        	}
+        }
+        
+        System.out.println(MessageFormat.format("\nThere were {0} games found in the {1} genre.\n", gamesFound.size(), genre));
+        System.out.println("--------------------------------------------");
+        for (int i = 0; i < gamesFound.size(); i++)
+        {
+            System.out.println((i+1)+": " + gamesFound.get(i).toString());
+        }
+        System.out.println("--------------------------------------------");
     } 
 }
