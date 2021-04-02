@@ -334,13 +334,27 @@ public class VideoGame
     * OUTPUT METHODS                                              *
     **************************************************************/
     
-    //Return a string with only the title and issue number
+    /***********************************************************************
+	 * Method:  description	                                                *
+	 * Purpose: Returns a basic description of the game, including its      *
+	 *          title and release year.    						            *
+	 * Parameters: none                                                     *
+	 * Return value: The title and release year of the game, concatenated   *
+	 * 				 into a single String.                                  *
+	 ***********************************************************************/
     public String description() 
     {
         return this.title + " released in " + this.releaseYear + ".";
     }
     
-    //Return the entire object as a single String
+    /***********************************************************************
+	 * Method:  toString	                                                *
+	 * Purpose: Displays the attributes of the game in an easy to read      *
+	 * 			manner.     						                        *
+	 * Parameters: none                                                     *
+	 * Return value: The attributes of the video, concatenated into a       *
+	 * 				 single String.                                         *
+	 ***********************************************************************/
     public String toString()
     {
         String result = this.title + ".";
@@ -370,6 +384,17 @@ public class VideoGame
     * OTHER METHODS                                               *
     **************************************************************/
     
+    /***********************************************************************
+	 * Method:  createSequel	                                            *
+	 * Purpose: Creates a new game in the same series as the original,      *
+	 *          with appropriate title and numberInSeries attributes.       *
+	 *          All other attributes are copied from the original game.    	*
+	 * Parameters:                                                          *
+	 *    originalTitle -- The original game that the sequel will be        *
+	 *                     based on. Most of the sequel's attributes will   *
+	 *                     be copied from this game.                        *
+	 * Return value: The new game, as a VideoGame object.                   *
+	 ***********************************************************************/
     public VideoGame createSequel(VideoGame originalTitle)
     {
         return new VideoGame(originalTitle.title + " " + originalTitle.numberInSeries + 1,
