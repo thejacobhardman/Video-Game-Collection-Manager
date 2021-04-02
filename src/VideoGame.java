@@ -382,7 +382,7 @@ public class VideoGame
         	result += "\nPublished by: " + this.publisher + ".";
         }
         
-        result += "\nOriginal price at release: " + this.releasePrice + ".";
+        result += "\nOriginal price at release: $" + this.releasePrice + ".";
         
         if (this.isEarlyAccess == true) {
         	result += "\nIs an early access title.";
