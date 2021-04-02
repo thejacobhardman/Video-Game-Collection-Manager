@@ -19,28 +19,28 @@
 
 import java.util.*;
 
-public class ComicCollection 
+public class VideoGameCollection 
 {
     /**************************************************************
     * ATTRIBUTES                                                  *
     **************************************************************/
     private String name;
-    private ArrayList<ComicBook> comics;
+    private ArrayList<VideoGame> games;
     
     /**************************************************************
     * CONSTRUCTORS                                                *
     **************************************************************/
     // all necessary parameters for attributes
-    public ComicCollection(String name_)
+    public VideoGameCollection(String name_)
     {
         this.name = name_;
-        this.comics = new ArrayList<ComicBook>();
+        this.games = new ArrayList<VideoGame>();
     }
     
     // no initial parameters
-    public ComicCollection()
+    public VideoGameCollection()
     {
-        this("My comic book collection");
+        this("My video game collection.");
     }
     
     /**************************************************************
@@ -48,15 +48,15 @@ public class ComicCollection
     **************************************************************/
     
     // return a comic given the index
-    public ComicBook getComic(int index)  
+    public VideoGame getGame(int index)  
     {
-        return this.comics.get(index);
+        return this.games.get(index);
     }
     
     // return the number of comics in the array
     public int getSize()
     {
-        return this.comics.size();
+        return this.games.size();
     }
     
     
@@ -68,20 +68,20 @@ public class ComicCollection
     {
         System.out.println("\nCollection: "+this.name+"\n");
         System.out.println("--------------------------------------------");
-        for (int i = 0; i < this.comics.size(); i++)
+        for (int i = 0; i < this.games.size(); i++)
         {
-            System.out.println((i+1)+": "+this.getComic(i).toString());
+            System.out.println((i+1)+": "+this.getGame(i).toString());
         }
-        System.out.println(this.comics.size()+" in collection.");
+        System.out.println(this.games.size()+" in collection.");
         System.out.println("--------------------------------------------");
     }
     
     // print a summary of the collection
     public void printSummary()
     {
-        for (int i = 0; i < this.comics.size(); i++)
+        for (int i = 0; i < this.games.size(); i++)
         {
-            System.out.println(this.getComic(i).description());
+            System.out.println(this.getGame(i).description());
         }
     }
     
@@ -89,9 +89,9 @@ public class ComicCollection
     * OTHER METHODS                                               *
     **************************************************************/
     
-    public void addComic(ComicBook newComic)
+    public void addGame(VideoGame newGame)
     {
-        this.comics.add(newComic);
+        this.games.add(newGame);
     }
     
     public void SearchByTitle()
