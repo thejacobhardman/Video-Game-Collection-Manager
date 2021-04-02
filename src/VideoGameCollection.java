@@ -164,11 +164,27 @@ public class VideoGameCollection
     * OTHER METHODS                                               *
     **************************************************************/
     
+    /***********************************************************************
+	 * Method:  addGame                                                     *
+	 * Purpose:  adds a new game to the collection                          *
+	 * Parameters:                                                          *
+	 *    newGame -- the new game to add, as a VideoGame object             *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void addGame(VideoGame newGame)
     {
         this.games.add(newGame);
     }
     
+    /***********************************************************************
+	 * Method:  SearchByTitle                                               *
+	 * Purpose:  Searches the collection for games that match a title       *
+	 * 			 query made by the user. The games that match are then      *
+	 * 			 displayed in an easy to read manner.                       *
+	 * Parameters:                                                          *
+	 *    title -- the title to search the collection for, as a String.     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void SearchByTitle(String title)
     {
     	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
@@ -187,6 +203,16 @@ public class VideoGameCollection
         System.out.println("--------------------------------------------");
     }
     
+    /***********************************************************************
+	 * Method:  SearchByDeveloper                                           *
+	 * Purpose:  Searches the collection for games that match a developer   *
+	 * 			 query made by the user. The games that match are then      *
+	 * 			 displayed in an easy to read manner.                       *
+	 * Parameters:                                                          *
+	 *    developer -- the developer to search the collection for,          *
+	 *    			   as a String.                                         *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void SearchByDeveloper(String developer)
     {
     	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
@@ -205,6 +231,15 @@ public class VideoGameCollection
         System.out.println("--------------------------------------------");
     }
     
+    /***********************************************************************
+   	 * Method:  SearchByGenre                                               *
+   	 * Purpose:  Searches the collection for games that match a genre       *
+   	 * 			 query made by the user. The games that match are then      *
+   	 * 			 displayed in an easy to read manner.                       *
+   	 * Parameters:                                                          *
+   	 *    genre -- the genre to search the collection for, as a String.     *
+   	 * Return value: None                                                   *
+   	 ***********************************************************************/
     public void SearchByGenre(String genre)
     {
     	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
