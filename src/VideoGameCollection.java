@@ -10,6 +10,11 @@
 * DESCRIPTION:                                                        *
 * The following is an OOP definition for a video game collection.     *
 *                                                                     *
+* ATTRIBUTES:                                                         *
+* 	name -- The name of the collection, stored as a String.           *
+* 	games -- An ArrayList that stores the individual VideoGame        *
+* 			 objects.												  *
+*                                                                     *
 * COPYRIGHT:                                                          *
 * This program is copyright (c)2020 Jacob Hardman and Dean Zeller.    *
 * Based on a template written by Tom Jensen and Dean Zeller.          *

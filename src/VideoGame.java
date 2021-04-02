@@ -10,6 +10,20 @@
 * DESCRIPTION:                                                        *
 * The following is an OOP definition for a video game object.         *
 *                                                                     *
+* ATTRIBUTES:                                                         *
+* 	title -- The title of the game, stored as a String.               *
+* 	releaseYear -- The year that the game was released in, stored     *
+* 				   as an int.                                         *
+* 	genre -- The genre of the game, stored as a String.               *
+* 	developer -- The developer of the game, stored as a String.       *
+* 	publisher -- The publisher of the game, stored as a String.       *
+* 	releasePrice -- The price of the game at release,                 *
+* 					stored as a double.                               *
+* 	isEarlyAccess -- Denotes whether the game is currently in a       *
+* 					 state of early access, stored as a boolean.      *
+* 	numberInSeries -- Denotes the chronological placement of a game   *
+* 					  in a series.                                    *
+*                                                                     *
 * COPYRIGHT:                                                          *
 * This program is copyright (c)2020 Jacob Hardmanm and Dean Zeller.   *
 * Based on a template written by Tom Jensen and Dean Zeller.          *
