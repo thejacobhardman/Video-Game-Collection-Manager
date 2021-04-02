@@ -21,6 +21,39 @@ public class VideoGameTester
 {
     public static void main(String[] args) 
     {
+//    	private String title;
+//        private int releaseYear;
+//        private String genre;
+//        private String developer;
+//        private String publisher;
+//        private double releasePrice;
+//        private boolean isEarlyAccess;
+//        private int numberInSeries;
+        
+    	VideoGame game1 = new VideoGame("Halo: Combat Evolved",
+    									2001,
+    									"First Person Shooter",
+    									"Bungie",
+    									"Microsoft",
+    									59.99,
+    									false,
+    									1);
+    	
+    	VideoGame game2 = new VideoGame("Subnautica",
+    								    2019,
+    								    "Survival",
+    								    "Unknown Worlds Entertainment",
+    								    29.99,
+    								    1);
+    	
+    	VideoGame game3 = new VideoGame("Insurgency",
+    			                        2014,
+    			                        "First Person Shooter",
+    			                        "New World Interactive",
+    			                        19.99,
+    			                        false,
+    			                        1);
+    	
 //        // Load initial collection (hardcoded for now)
 //        ComicBook book1 = new ComicBook("Captain Marvel", 
 //                                        1, 
