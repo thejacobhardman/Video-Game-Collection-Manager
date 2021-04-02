@@ -141,73 +141,190 @@ public class VideoGame
     * GET and SET METHODS                                         *
     **************************************************************/
     
+    /***********************************************************************
+	 * Method:  setTitle                                                    *
+	 * Purpose:  manually sets the title of the game                        *
+	 * Parameters:                                                          *
+	 *    title_ -- the new title for the game, as a String                 *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setTitle(String title_)
     {
         this.title = title_;
     }
+    
+    /***********************************************************************
+	 * Method:  getTitle                                                    *
+	 * Purpose:  retrieves the title of the game                            *
+	 * Parameters: None                                                     *
+	 * Return value: The title of the game as a String.                     *
+	 ***********************************************************************/
     public String getTitle()
     {
         return this.title;
     }
     
+    /***********************************************************************
+	 * Method:  setReleaseYear                                              *
+	 * Purpose:  manually sets the release year of the game                 *
+	 * Parameters:                                                          *
+	 *    releaseYear_ -- the new release year of the game, as an int       *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setReleaseYear(int releaseYear_)
     {
         this.releaseYear = releaseYear_;
     }
+    
+    /***********************************************************************
+	 * Method:  getReleaseYear                                              *
+	 * Purpose:  retrieves the release year of the game                     *
+	 * Parameters: None                                                     *
+	 * Return value: The release year of the game, as an int.               *
+	 ***********************************************************************/
     public int getReleaseYear()
     {
         return this.releaseYear;
     }
     
+    /***********************************************************************
+	 * Method:  setGenre                                                    *
+	 * Purpose:  manually sets the genre of the game                        *
+	 * Parameters:                                                          *
+	 *    genre_ -- the new genre of the game, as a String                  *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setGenre(String genre_)
     {
         this.genre = genre_;
     }
+    
+    /***********************************************************************
+	 * Method:  getGenre                                                    *
+	 * Purpose:  retrieves the genre of the game                            *
+	 * Parameters: None                                                     *
+	 * Return value: The genre of the game, as a String.                    *
+	 ***********************************************************************/
     public String getGenre()
     {
         return this.genre;
     }
     
+    /***********************************************************************
+	 * Method:  setDeveloper                                                *
+	 * Purpose:  manually sets the developer of the game                    *
+	 * Parameters:                                                          *
+	 *    developer_ -- the new developer of the game, as a String          *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setDeveloper(String developer_)
     {
         this.developer = developer_;
     }
+    
+    /***********************************************************************
+	 * Method:  getDeveloper                                                *
+	 * Purpose:  retrieves the developer info for the game                  *
+	 * Parameters: None                                                     *
+	 * Return value: The developer of the game, as a String.                *
+	 ***********************************************************************/
     public String getDeveloper()
     {
         return this.developer;
     }
     
+    /***********************************************************************
+	 * Method:  setPublisher                                                *
+	 * Purpose:  manually sets the publisher of the game                    *
+	 * Parameters:                                                          *
+	 *    publisher_ -- the new publisher of the game, as a String          *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setPublisher(String publisher_)
     {
         this.publisher = publisher_;
     }
+    
+    /***********************************************************************
+	 * Method:  getPublisher                                                *
+	 * Purpose:  retrieves the publisher info for the game                  *
+	 * Parameters: None                                                     *
+	 * Return value: The publisher of the game, as a String.                *
+	 ***********************************************************************/
     public String getPublisher()
     {
         return this.publisher;
     }
     
+    /***********************************************************************
+	 * Method:  setReleasePrice                                             *
+	 * Purpose:  manually sets the release price of the game                *
+	 * Parameters:                                                          *
+	 *    releasePrice_ -- the new publisher of the game, as a double       *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setReleasePrice(double releasePrice_)
     {
         this.releasePrice = releasePrice_;
     }
+    
+    /***********************************************************************
+	 * Method:  getReleasePrice                                             *
+	 * Purpose:  retrieves the release price of the game                    *
+	 * Parameters: None                                                     *
+	 * Return value: The release price of the game, as a double.            *
+	 ***********************************************************************/
     public double getReleasePrice()
     {
         return this.releasePrice;
     }
     
+    /***********************************************************************
+	 * Method:  setIsEarlyAccess                                            *
+	 * Purpose:  manually sets whether the game is in a                     *
+	 *           state of early access.                                     *
+	 * Parameters:                                                          *
+	 *    isEarlyAccess_ -- the new condition of the game's early access    *
+	 *                      status, as a boolean.                           *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setIsEarlyAccess(boolean isEarlyAccess_) 
     {
     	this.isEarlyAccess = isEarlyAccess_;
     }
+    
+    /***********************************************************************
+	 * Method:  getIsEarlyAccess                                            *
+	 * Purpose:  retrieves whether the game is in a state of early access   *
+	 * Parameters: None                                                     *
+	 * Return value: the new condition of the game's early access           *
+	 *               status, as a boolean.                                  *
+	 ***********************************************************************/
     public boolean getIsEarlyAccess()
     {
     	return this.isEarlyAccess;
     }
     
+    /***********************************************************************
+	 * Method:  setNumberInSeries                                           *
+	 * Purpose:  manually sets game's chronological position in a series.   *
+	 * Parameters:                                                          *
+	 *    numberInSeries_ -- the game's new chronological position in the   *
+	 *    					 series, as an int.                             *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
     public void setNumberInSeries(int numberInSeries_) 
     {
     	this.numberInSeries = numberInSeries_;
     }
+    
+    /***********************************************************************
+	 * Method:  getNumberInSeries                                           *
+	 * Purpose:  retrieves the game's chronological position in its series  *
+	 * Parameters: None                                                     *
+	 * Return value: the game's chronological position in its series,       *
+	 * 				 as an int.                                             *
+	 ***********************************************************************/
     public int getNumberInSeries()
     {
     	return this.numberInSeries;
