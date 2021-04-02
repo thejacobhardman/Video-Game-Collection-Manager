@@ -47,7 +47,8 @@ public class VideoGame
 	 *    releasePrice_ -- the price of the game at release                 *
 	 *    isEarlyAccess_ -- Denotes whether the game is in a state          *
 	 *    of early access.                                                  *
-	 *    tags_ -- Any relevant metadata
+	 *    numberInSeries_ -- Denotes what place in the series the game      *
+	 *    takes place                                                       *
 	 * Return value:  no return value type                                  *
 	 ***********************************************************************/
     public VideoGame(String title_, 
@@ -69,7 +70,22 @@ public class VideoGame
         this.numberInSeries = numberInSeries_;
     }
     
-    //publisher, isEarlyAccess and tags omitted
+    /***********************************************************************
+	 * Method:   Constructor (publisher and isEarlyAccess omitted)          *
+	 * Purpose:  Create a Video Game based on user parameters.              *
+	 * 			 The publisher attribute is set to the developer attribute  *
+	 * 	         by default. isEarlyAccess is set to false.                 *
+	 * Parameters:                                                          *
+	 *    title_ -- the title of the game                   				*
+	 *    releaseYear_ -- the year that the game was released               *
+	 *    genre_ -- the genre of the game                                   *
+	 *    developer_ -- the developer of the game                           *
+	 *    releasePrice_ -- the price of the game at release                 *
+	 *    of early access.                                                  *
+	 *    numberInSeries_ -- Denotes what place in the series the game      *
+	 *    takes place                                                       *
+	 * Return value:  no return value type                                  *
+	 ***********************************************************************/
     public VideoGame(String title_, 
     				 int releaseYear_, 
     				 String genre_,
@@ -86,25 +102,24 @@ public class VideoGame
         this.numberInSeries = 1;
     }
     
-    //publisher and isEarlyAccess omitted
-    public VideoGame(String title_, 
-    				 int releaseYear_, 
-    				 String genre_,
-    				 String developer_, 
-    				 double releasePrice_,
-    				 String tags_) 
-    {
-    	this.title = title_;
-        this.releaseYear = releaseYear_;
-        this.genre = genre_;
-        this.developer = developer_;
-        this.publisher = developer_;
-        this.releasePrice = releasePrice_;
-        this.isEarlyAccess = false;
-        this.numberInSeries = 1;
-    }
-    
-    //publisher omitted
+    /***********************************************************************
+	 * Method:   Constructor (publisher omitted)                            *
+	 * Purpose:  Create a Video Game based on user parameters.              *
+	 * 			 The publisher attribute is set to the developer attribute  *
+	 * 	         by default.                                                *
+	 * Parameters:                                                          *
+	 *    title_ -- the title of the game                   				*
+	 *    releaseYear_ -- the year that the game was released               *
+	 *    genre_ -- the genre of the game                                   *
+	 *    developer_ -- the developer of the game                           *
+	 *    releasePrice_ -- the price of the game at release                 *
+	 *    of early access.                                                  *
+	 *    isEarlyAccess_ -- Denotes whether the game is in a state          *
+	 *    of early access.                                                  *
+	 *    numberInSeries_ -- Denotes what place in the series the game      *
+	 *    takes place                                                       *
+	 * Return value:  no return value type                                  *
+	 ***********************************************************************/
     public VideoGame(String title_, 
     				 int releaseYear_, 
     				 String genre_,
