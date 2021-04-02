@@ -30,7 +30,7 @@ public class VideoGame
     private double releasePrice;
     private boolean isEarlyAccess;
     private String tags;
-    private int iterator;
+    private int numberInSeries;
     
     /**************************************************************
     * CONSTRUCTORS                                                *
@@ -45,7 +45,7 @@ public class VideoGame
                      double releasePrice_,
                      boolean isEarlyAccess_,
                      String tags_,
-                     int iterator_) 
+                     int numberInSeries_) 
     {
         this.title = title_;
         this.releaseYear = releaseYear_;
@@ -55,7 +55,7 @@ public class VideoGame
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = isEarlyAccess_;
         this.tags = tags_;
-        this.iterator = iterator_;
+        this.numberInSeries = numberInSeries_;
     }
     
     //publisher, isEarlyAccess and tags omitted
@@ -73,6 +73,7 @@ public class VideoGame
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = false;
         this.tags = null;
+        this.numberInSeries = 1;
     }
     
     //publisher and isEarlyAccess omitted
@@ -91,6 +92,7 @@ public class VideoGame
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = false;
         this.tags = tags_;
+        this.numberInSeries = 1;
     }
     
     //publisher omitted
@@ -109,7 +111,8 @@ public class VideoGame
         this.publisher = developer_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = isEarlyAccess_;
-        this.tags = tags_;   
+        this.tags = tags_;
+        this.numberInSeries = 1;
     }
     
     /**************************************************************
@@ -188,6 +191,15 @@ public class VideoGame
     	return this.tags;
     }
     
+    public void setNumberInSeries(int numberInSeries_) 
+    {
+    	this.numberInSeries = numberInSeries_;
+    }
+    public int getNumberInSeries()
+    {
+    	return this.numberInSeries;
+    }
+    
     /**************************************************************
     * OUTPUT METHODS                                              *
     **************************************************************/
@@ -232,17 +244,10 @@ public class VideoGame
     * OTHER METHODS                                               *
     **************************************************************/
     
-//  private String title;
-//  private int releaseYear;
-//  private String genre;
-//  private String developer;
-//  private String publisher;
-//  private double releasePrice;
-//  private boolean isEarlyAccess;
-//  private String tags;
     public VideoGame createSequel()
     {
-    	String title_ = this.title + " " + this.iterator + 1;
+    	String title_ = this.title + " " + this.numberInSeries + 1;
+    	int numberInSeries_ = this.numberInSeries + 1;
         return new VideoGame(title_,
         					 this.releaseYear,
         					 this.genre,
@@ -251,7 +256,7 @@ public class VideoGame
         					 this.releasePrice,
         					 this.isEarlyAccess,
         					 this.tags,
-        					 this.iterator);
+        					 numberInSeries_);
     }
     
 }
