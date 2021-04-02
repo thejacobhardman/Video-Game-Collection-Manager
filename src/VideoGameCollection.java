@@ -198,7 +198,7 @@ public class VideoGameCollection
         System.out.println("--------------------------------------------");
         for (int i = 0; i < gamesFound.size(); i++)
         {
-            System.out.println((i+1)+": " + gamesFound.get(i).toString());
+            System.out.println((i+1)+": " + gamesFound.get(i).description());
         }
         System.out.println("--------------------------------------------");
     }
@@ -226,7 +226,7 @@ public class VideoGameCollection
         System.out.println("--------------------------------------------");
         for (int i = 0; i < gamesFound.size(); i++)
         {
-            System.out.println((i+1)+": " + gamesFound.get(i).toString());
+            System.out.println((i+1)+": " + gamesFound.get(i).description());
         }
         System.out.println("--------------------------------------------");
     }
@@ -253,7 +253,7 @@ public class VideoGameCollection
         System.out.println("--------------------------------------------");
         for (int i = 0; i < gamesFound.size(); i++)
         {
-            System.out.println((i+1)+": " + gamesFound.get(i).toString());
+            System.out.println((i+1)+": " + gamesFound.get(i).description());
         }
         System.out.println("--------------------------------------------");
     } 
