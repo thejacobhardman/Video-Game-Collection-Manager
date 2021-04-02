@@ -22,23 +22,27 @@ public class VideoGameCollectionTester
     
     public static void main(String[] args) 
     {
-        // Load initial collection, hardcoded for now
-//        ComicCollection collection1 = new ComicCollection("Dean's Comics");
-//        ComicBook tempComic;
-//        tempComic = new ComicBook("Captain Marvel", 
-//                                  1, 
-//                                  "Kelly Sue DeConnick", 
-//                                  "Scott Hepburn");
-//        collection1.addComic(tempComic);
-//        
-//        tempComic = new ComicBook("Spider-Man", 
-//                                  1, 
-//                                  "Brian Michael Bendis", 
-//                                  "Mark Bagley", 
-//                                  "Mint", 
-//                                  25.00);
-//        collection1.addComic(tempComic);
-//        collection1.printCollection();
+    	// Load Initial Collection, hardcoded for now
+    	VideoGameCollection collection1 = new VideoGameCollection("First Person Shooter Games");
+    	VideoGame game1 = new VideoGame("Halo: Combat Evolved",
+										2001,
+										"First Person Shooter",
+										"Bungie",
+										"Microsoft",
+										59.99,
+										false,
+										1);
+    	VideoGame game2 = new VideoGame("Insurgency",
+                						2014,
+                						"First Person Shooter",
+                						"New World Interactive",
+                						19.99,
+                						false,
+                						1);
+    	collection1.addGame(game1);
+    	collection1.addGame(game2);
+    	
+    	collection1.printCollection();
 //        
 //        // Make changes through get and set methods
 //        collection1.getComic(0).setTitle("Superbwoman");
