@@ -20,16 +20,7 @@
 public class VideoGameTester 
 {
     public static void main(String[] args) 
-    {
-//    	private String title;
-//        private int releaseYear;
-//        private String genre;
-//        private String developer;
-//        private String publisher;
-//        private double releasePrice;
-//        private boolean isEarlyAccess;
-//        private int numberInSeries;
-        
+    {   
     	VideoGame game1 = new VideoGame("Halo: Combat Evolved",
     									2001,
     									"First Person Shooter",
@@ -53,44 +44,31 @@ public class VideoGameTester
     			                        19.99,
     			                        false,
     			                        1);
-    	
-//        // Load initial collection (hardcoded for now)
-//        ComicBook book1 = new ComicBook("Captain Marvel", 
-//                                        1, 
-//                                        "Kelly Sue DeConnick", 
-//                                        "Scott Hepburn");
-//        ComicBook book2 = book1.createNextInSeries();
-//        ComicBook book3 = new ComicBook("Darth Vader", 
-//                                        1,
-//                                        "Kieron Gillen", 
-//                                        "Salvador Larroca", 
-//                                        "Mint", 
-//                                        3.50);
-//        
-//        // Summary info
-//        System.out.println("My comic books:");
-//        System.out.println("  "+book1.description());
-//        System.out.println("  "+book2.description());
-//        System.out.println("  "+book3.description());
-//        System.out.println("--------------------------------------");
-//        
-//        // Full info
-//        System.out.println("\nDetailed information:\n");
-//        System.out.println(book1.toString());
-//        System.out.println(book2.toString());
-//        System.out.println(book3.toString());
-//        
-//        // Change info
-//        book1.setWriter("Warren Ellis");
-//        book2.setArtist("Jim Lee");
-//        book2.setValue(40);
-//        book3.setCondition("Mint");
-//        book3.setValue(book2.getValue());
-//        
-//        // Full info, reflecting changes
-//        System.out.println("\nDetailed information, with changes:\n");
-//        System.out.println(book1.toString());
-//        System.out.println(book2.toString());
-//        System.out.println(book3.toString());
+     
+        // Summary info
+        System.out.println("My Video Games:");
+        System.out.println(" - " + game1.description());
+        System.out.println(" - " + game2.description());
+        System.out.println(" - " + game3.description());
+        System.out.println("--------------------------------------");
+        
+        // Full info
+        System.out.println("\nDetailed information:\n");
+        System.out.println(game1.toString());
+        System.out.println(game2.toString());
+        System.out.println(game3.toString());
+        
+        // Change Info 
+        game1.setDeveloper("343 Industries");
+        game2.setReleasePrice(19.99);
+        game2.setGenre("Survival Horror");
+        game3.setPublisher("Microsoft");
+        game3.setGenre("Military Simulation");
+        
+        // Full info, reflecting changes
+        System.out.println("\nDetailed information, with changes:\n");
+        System.out.println(game1.toString());
+        System.out.println(game2.toString());
+        System.out.println(game3.toString());
     }
 }
