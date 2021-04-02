@@ -29,14 +29,27 @@ public class VideoGame
     private String publisher;
     private double releasePrice;
     private boolean isEarlyAccess;
-    private String tags;
     private int numberInSeries;
     
     /**************************************************************
     * CONSTRUCTORS                                                *
     **************************************************************/
     
-    //all necessary parameters for attributes
+    /***********************************************************************
+	 * Method:   Constructor (all parameters)                               *
+	 * Purpose:  Create a Video Game based on user parameters               *
+	 * Parameters:                                                          *
+	 *    title_ -- the title of the game                   				*
+	 *    releaseYear_ -- the year that the game was released               *
+	 *    genre_ -- the genre of the game                                   *
+	 *    developer_ -- the developer of the game                           *
+	 *    publisher_ -- the publisher of the game                           *
+	 *    releasePrice_ -- the price of the game at release                 *
+	 *    isEarlyAccess_ -- Denotes whether the game is in a state          *
+	 *    of early access.                                                  *
+	 *    tags_ -- Any relevant metadata
+	 * Return value:  no return value type                                  *
+	 ***********************************************************************/
     public VideoGame(String title_, 
                      int releaseYear_, 
                      String genre_,
@@ -44,7 +57,6 @@ public class VideoGame
                      String publisher_, 
                      double releasePrice_,
                      boolean isEarlyAccess_,
-                     String tags_,
                      int numberInSeries_) 
     {
         this.title = title_;
@@ -54,7 +66,6 @@ public class VideoGame
         this.publisher = publisher_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = isEarlyAccess_;
-        this.tags = tags_;
         this.numberInSeries = numberInSeries_;
     }
     
@@ -72,7 +83,6 @@ public class VideoGame
         this.publisher = developer_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = false;
-        this.tags = null;
         this.numberInSeries = 1;
     }
     
@@ -91,7 +101,6 @@ public class VideoGame
         this.publisher = developer_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = false;
-        this.tags = tags_;
         this.numberInSeries = 1;
     }
     
@@ -101,8 +110,7 @@ public class VideoGame
     				 String genre_,
     				 String developer_, 
     				 double releasePrice_,
-    				 boolean isEarlyAccess_,
-    				 String tags_) 
+    				 boolean isEarlyAccess_) 
     {
     	this.title = title_;
         this.releaseYear = releaseYear_;
@@ -111,7 +119,6 @@ public class VideoGame
         this.publisher = developer_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = isEarlyAccess_;
-        this.tags = tags_;
         this.numberInSeries = 1;
     }
     
@@ -182,15 +189,6 @@ public class VideoGame
     	return this.isEarlyAccess;
     }
     
-    public void setTags(String tags_)
-    {
-    	this.tags = tags_;
-    }
-    public String getTags()
-    {
-    	return this.tags;
-    }
-    
     public void setNumberInSeries(int numberInSeries_) 
     {
     	this.numberInSeries = numberInSeries_;
@@ -232,10 +230,6 @@ public class VideoGame
         	result += "\nIs not an early access title.";
         }
         
-        if (this.tags != null) {
-        	result += "\n Tags: " + this.tags + ".";
-        }
-        
         result += "\n";
         return result;
     }
@@ -253,7 +247,6 @@ public class VideoGame
         					 originalTitle.publisher,
         					 originalTitle.releasePrice,
         					 originalTitle.isEarlyAccess,
-        					 originalTitle.tags,
         					 originalTitle.numberInSeries + 1);
     }
     
