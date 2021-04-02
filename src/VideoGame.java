@@ -104,7 +104,8 @@ public class VideoGame
     				 int releaseYear_, 
     				 String genre_,
                      String developer_, 
-                     double releasePrice_) 
+                     double releasePrice_,
+                     int numberInSeries_) 
     {
     	this.title = title_;
         this.releaseYear = releaseYear_;
@@ -113,7 +114,7 @@ public class VideoGame
         this.publisher = developer_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = false;
-        this.numberInSeries = 1;
+        this.numberInSeries = numberInSeries_;
     }
     
     /***********************************************************************
@@ -139,7 +140,8 @@ public class VideoGame
     				 String genre_,
     				 String developer_, 
     				 double releasePrice_,
-    				 boolean isEarlyAccess_) 
+    				 boolean isEarlyAccess_,
+    				 int numberInSeries_) 
     {
     	this.title = title_;
         this.releaseYear = releaseYear_;
@@ -148,7 +150,7 @@ public class VideoGame
         this.publisher = developer_;
         this.releasePrice = releasePrice_;
         this.isEarlyAccess = isEarlyAccess_;
-        this.numberInSeries = 1;
+        this.numberInSeries = numberInSeries_;
     }
     
     /**************************************************************
