@@ -244,19 +244,17 @@ public class VideoGame
     * OTHER METHODS                                               *
     **************************************************************/
     
-    public VideoGame createSequel()
+    public VideoGame createSequel(VideoGame originalTitle)
     {
-    	String title_ = this.title + " " + this.numberInSeries + 1;
-    	int numberInSeries_ = this.numberInSeries + 1;
-        return new VideoGame(title_,
-        					 this.releaseYear,
-        					 this.genre,
-        					 this.developer,
-        					 this.publisher,
-        					 this.releasePrice,
-        					 this.isEarlyAccess,
-        					 this.tags,
-        					 numberInSeries_);
+        return new VideoGame(originalTitle.title + " " + originalTitle.numberInSeries + 1,
+        					 originalTitle.releaseYear,
+        					 originalTitle.genre,
+        					 originalTitle.developer,
+        					 originalTitle.publisher,
+        					 originalTitle.releasePrice,
+        					 originalTitle.isEarlyAccess,
+        					 originalTitle.tags,
+        					 originalTitle.numberInSeries + 1);
     }
     
 }
