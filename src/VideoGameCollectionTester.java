@@ -43,11 +43,10 @@ public class VideoGameCollectionTester
     	collection1.addGame(game2);
     	
     	collection1.printCollection();
-//        
-//        // Make changes through get and set methods
-//        collection1.getComic(0).setTitle("Superbwoman");
-//        collection1.getComic(1).setArtist("Gary Frank");
-//        collection1.printCollection();
-        
+    	
+    	// Make changes through get and set methods
+    	collection1.getGame(0).setTitle("I changed the game name! Haha!");
+    	collection1.getGame(1).setDeveloper("Jacob Hardman made this game");
+    	collection1.printCollection();
     }
 }
