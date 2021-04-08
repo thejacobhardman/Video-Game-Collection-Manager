@@ -131,7 +131,106 @@ public class VideoGameCollectionInterface {
 	}
 	
 	public void AddGame() {
-		System.out.println("Adding a new game to the collection.");
+		System.out.println("\n-----\n\nAdding a new game to the collection:");
+		
+		//title
+		System.out.print("\nEnter the new game's title: ");
+		String title = input.nextLine();
+		
+		//release year
+		int releaseYear = 0;
+		boolean validYear = false;
+		while (!validYear) {
+			System.out.print("\nEnter the new game's release year: ");
+			String yearString = input.nextLine();
+			
+			try {
+				releaseYear = Integer.parseInt(yearString);
+				
+				if (releaseYear > 0) {
+					validYear = true;
+				} else {
+					System.out.println("Please enter a valid year.");
+				}
+			} catch (Exception e) {
+				System.out.println("Please enter a valid year.");
+			}
+		}
+		
+		//genre
+		System.out.print("\nPlease enter the new game's genre: ");
+		String genre = input.nextLine();
+		
+		//developer
+		System.out.print("\nPlease enter the new game's developer: ");
+		String developer = input.nextLine();
+		
+		//publisher
+		String publisher = "";
+		boolean validInput = false;
+		while (!validInput) {
+			System.out.print("\nWas the new game self published? (Y/N): ");
+			String answer = input.nextLine();
+			
+			if (answer.toUpperCase().equals("Y")) {
+				publisher = developer;
+				validInput = true;
+			} else if (answer.toUpperCase().equals("N")) {
+				System.out.print("\nPlease enter the game's puiblisher: ");
+				publisher = input.nextLine();
+				validInput = true;
+			} else {
+				System.out.println("Please enter a valid input.");
+			}
+		}
+		
+		//releasePrice
+		double releasePrice = 0.0;
+		boolean validPrice = false;
+		while (!validPrice) {
+			System.out.print("\nEnter the new game's price at release: ");
+			String priceString = input.nextLine();
+			
+			try {
+				releasePrice = Double.parseDouble(priceString);
+				
+				if (releasePrice > 0) {
+					validPrice = true;
+				}
+			} catch (Exception e) {
+				System.out.println("Please enter a valid price as a double. ($ is not required)");
+			}
+		}
+		
+		//isEarlyAccess
+		boolean isEarlyAccess = false;
+		validInput = false;
+		while (!validInput) {
+			System.out.print("\nIs the new game currently in a state of early access? (Y/N): ");
+			String answer = input.nextLine();
+			
+			if (answer.toUpperCase().equals("Y")) {
+				isEarlyAccess = true;
+				validInput = true;
+			} else if (answer.toUpperCase().equals("N")) {
+				validInput = true;
+			} else {
+				System.out.println("Please enter a valid input.");
+			}
+		}
+		
+		VideoGame newGame = new VideoGame(title,
+									      releaseYear,
+									      genre,
+									      developer,
+									      publisher,
+									      releasePrice,
+									      isEarlyAccess,
+									      1);
+		
+		collection.addGame(newGame);
+		
+		System.out.println("\n" + newGame.getTitle() + " has been added to the collection.\n-----\n\n");
 	}
 	
 	public void DeleteGame() {
