@@ -57,6 +57,49 @@ public class VideoGameCollectionInterface {
 		validSelections.add("Q");
 		this.selection = "x";
 		this.collection = new VideoGameCollection("My Favorite Games");
+		VideoGame game1 = new VideoGame("Halo: Combat Evolved",
+										2001,
+										"First Person Shooter",
+										"Bungie",
+										"Microsoft",
+										59.99,
+										false,
+										1);
+		VideoGame game2 = new VideoGame("Age Of Empires 2",
+										1999,
+										"Real Time Strategy",
+										"Forgotten Empires",
+										29.99,
+										false,
+										1);
+		VideoGame game3 = new VideoGame("DOOM",
+										2016,
+										"First Person Shooter",
+										"Id Software",
+										"Bethesda Gameworks",
+										59.99,
+										false,
+										1);
+		VideoGame game4 = new VideoGame("Rust",
+										2012,
+										"Survival",
+										"Indie",
+										19.99,
+										true,
+										1);
+		VideoGame game5 = new VideoGame("Battlefield 1942",
+										2001,
+										"First Person Shooter",
+										"DICE",
+										"Electronic Arts",
+										59.99,
+										false,
+										1);
+		this.collection.addGame(game1);
+		this.collection.addGame(game2);
+		this.collection.addGame(game3);
+		this.collection.addGame(game4);
+		this.collection.addGame(game5);
 		this.isRunning = true;
 	}
 	
@@ -67,7 +110,7 @@ public class VideoGameCollectionInterface {
 	 * Return value: None                                                   *
 	 ***********************************************************************/
 	public void DisplayMenu() {
-		System.out.println("Welcome To The VideoGameCollection Interface Program!");
+		System.out.println("Welcome To The Video Game Collection Interface Program!");
 		System.out.println("You are currently managing the collection: " + this.collection.getName() + ".");
 		System.out.println("Please make a valid selection from the list of options below: ");
 		System.out.println("\n-----------------------------------------\n");
@@ -230,7 +273,7 @@ public class VideoGameCollectionInterface {
 		
 		collection.addGame(newGame);
 		
-		System.out.println("\n" + newGame.getTitle() + " has been added to the collection.\n-----\n\n");
+		System.out.println("\n" + newGame.getTitle() + " has been added to the collection.\n\n-----\n");
 	}
 	
 	public void DeleteGame() {
@@ -246,26 +289,49 @@ public class VideoGameCollectionInterface {
 			
 			if (answer.toUpperCase().equals("T")) {
 				validInput = true;
-				PrintCollectionTable("");
+				PrintCollectionTable();
 			} else if (answer.toUpperCase().equals("L")) {
 				validInput = true;
-				PrintCollectionList("");
+				ArrayList<VideoGame> gamesToDisplay = new ArrayList<VideoGame>();
+				for (int i = 0; i < this.collection.getSize(); i++) {
+					gamesToDisplay.add(this.collection.getGame(i));
+				}
+				PrintCollectionList(gamesToDisplay);
 			} else {
 				System.out.println("Please enter a valid selection.");
 			}
 		}
 	}
 	
-	public void PrintCollectionTable(String searchTerm) {
-		System.out.println("Printing the collection as a table.");
+	public void PrintCollectionTable() {
+		System.out.println("\n-----\n");
+		System.out.printf("%-25s%-25s%-25s%-25s%-25s%-25s%-25s%n", 
+				          "Title:", "Release Year:", "Genre:", "Developer:",
+				          "Publisher:", "Release Price:", "Early Access:");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+		for (int i = 0; i < this.collection.getSize(); i++) {
+			VideoGame game = this.collection.getGame(i);
+			System.out.printf("%-25s%-25d%-25s%-25s%-25s%-25s%-25s%n", 
+			          game.getTitle(), game.getReleaseYear(), game.getGenre(), 
+			          game.getDeveloper(), game.getPublisher(),
+			          ("$" + game.getReleasePrice()).toString(), game.getIsEarlyAccess());
+		}
+		System.out.println("\n-----\n");
 	}
 	
-	public void PrintCollectionList(String searchTerm) {
-		System.out.println("Printing the table as a list.");
+	public void PrintCollectionList(ArrayList<VideoGame> gamesToDisplay) {
+		System.out.println("\n-----\n");
+		System.out.printf("%-10s%-10s%n", "Index:", "Title:");
+		for (int i = 0; i < gamesToDisplay.size(); i++) {
+			VideoGame game = gamesToDisplay.get(i);
+			System.out.printf("%-10s%-10s%n", (" " + i + 1 + ")").toString(), game.getTitle());
+		}
+		System.out.println("\n-----\n");
 	}
 	
-	public void SearchCollection() {
-		System.out.println("Searching the collection.");
+	public ArrayList<VideoGame> SearchCollection() {
+		System.out.println("\n-----\nSearching the collection.");
+		return new ArrayList<VideoGame>();
 	}
 	
 	/************************************************************************
