@@ -393,6 +393,15 @@ public class VideoGameCollectionInterface {
 		System.out.println("\n-----\n");
 	}
 	
+	/************************************************************************
+	 * Method: SearchCollection                                             *
+	 * Purpose: Allows the user enter a search parameter and filter the     *
+	 * 			games in the collection by any game that contains that      *
+	 * 			parameter. The game's title, genre, developer, and publisher*
+	 * 			attributes are searched for matches with the searchParam.   *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void SearchCollection() {
 		System.out.println("\n-----\n");
 		System.out.print("Please enter the term that you would like to search your collection of games for: ");
