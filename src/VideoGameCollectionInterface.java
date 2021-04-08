@@ -173,6 +173,14 @@ public class VideoGameCollectionInterface {
 		}
 	}
 	
+	/************************************************************************
+	 * Method: AddGame                                                      *
+	 * Purpose: Allows the user to add a new game to the collection,        *
+	 * 			prompts collect the user's input to fill in the VideoGame   *
+	 * 			object's parameters.                                        *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void AddGame() {
 		System.out.println("\n-----\n\nAdding a new game to the collection:");
 		
@@ -273,13 +281,49 @@ public class VideoGameCollectionInterface {
 		
 		collection.addGame(newGame);
 		
-		System.out.println("\n" + newGame.getTitle() + " has been added to the collection.\n\n-----\n");
+		System.out.println("\n'" + newGame.getTitle() + "' has been added to the collection.\n\n-----\n");
 	}
 	
 	public void DeleteGame() {
-		System.out.println("Removing a game from the collection.");
+		ArrayList<VideoGame> gamesToDisplay = new ArrayList<VideoGame>();
+		for (int i = 0; i < this.collection.getSize(); i++) {
+			gamesToDisplay.add(this.collection.getGame(i));
+		}
+		PrintCollectionList(gamesToDisplay);
+		
+		int gameToDelete = 0;
+		boolean validInput = false;
+		while (!validInput) {
+			System.out.print("Please select the index value of the game that you would like to remove: ");
+			String index = input.nextLine();
+			
+			try {
+				gameToDelete = Integer.parseInt(index);
+				
+				if (gameToDelete > 0 && gameToDelete < this.collection.getSize()) {
+					validInput = true;
+				} else {
+					System.out.println("Please select a valid index value.");
+				}
+			} catch (Exception e) {
+				System.out.println("Please enter a valid input.");
+			}
+		}
+		
+		gameToDelete--;
+		
+		System.out.println("\n'" + this.collection.getGame(gameToDelete).getTitle() + "' has been removed from the collection.");
+		this.collection.DeleteGame(gameToDelete);
+		System.out.println("\n-----\n");
 	}
 	
+	/************************************************************************
+	 * Method: PrintCollection                                              *
+	 * Purpose:  Logic that allows the user to determine which style        *
+	 * 			 they would like their collection printed out in.           *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void PrintCollection() {
 		System.out.println("\n-----\n");
 		boolean validInput = false;
@@ -303,6 +347,13 @@ public class VideoGameCollectionInterface {
 		}
 	}
 	
+	/************************************************************************
+	 * Method: PrintCollectionTable                                         *
+	 * Purpose: Prints out every game in the collection in a detailed       *
+	 * 			manner with all VideoGame parameters included.              *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void PrintCollectionTable() {
 		System.out.println("\n-----\n");
 		System.out.printf("%-25s%-25s%-25s%-25s%-25s%-25s%-25s%n", 
@@ -319,12 +370,19 @@ public class VideoGameCollectionInterface {
 		System.out.println("\n-----\n");
 	}
 	
+	/************************************************************************
+	 * Method: PrintCollectionTable                                         *
+	 * Purpose: A concise way to print out the games in the collection      *
+	 * 			with only the game's title and an index value included.     *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void PrintCollectionList(ArrayList<VideoGame> gamesToDisplay) {
 		System.out.println("\n-----\n");
 		System.out.printf("%-10s%-10s%n", "Index:", "Title:");
 		for (int i = 0; i < gamesToDisplay.size(); i++) {
 			VideoGame game = gamesToDisplay.get(i);
-			System.out.printf("%-10s%-10s%n", (" " + i + 1 + ")").toString(), game.getTitle());
+			System.out.printf("%-10s%-10s%n", (" " + (i + 1) + ")").toString(), game.getTitle());
 		}
 		System.out.println("\n-----\n");
 	}
