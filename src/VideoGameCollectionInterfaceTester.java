@@ -21,8 +21,8 @@
 public class VideoGameCollectionInterfaceTester {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		VideoGameCollectionInterface newInterface = new VideoGameCollectionInterface();
+		newInterface.RunUntilClose();
 	}
 
 }
