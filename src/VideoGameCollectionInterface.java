@@ -238,14 +238,29 @@ public class VideoGameCollectionInterface {
 	}
 	
 	public void PrintCollection() {
-		System.out.println("Printing the collection.");
+		System.out.println("\n-----\n");
+		boolean validInput = false;
+		while (!validInput) {
+			System.out.print("Would you like to view the collection as a table or a list? (T/L): ");
+			String answer = input.nextLine();
+			
+			if (answer.toUpperCase().equals("T")) {
+				validInput = true;
+				PrintCollectionTable("");
+			} else if (answer.toUpperCase().equals("L")) {
+				validInput = true;
+				PrintCollectionList("");
+			} else {
+				System.out.println("Please enter a valid selection.");
+			}
+		}
 	}
 	
-	public void PrintCollectionTable() {
+	public void PrintCollectionTable(String searchTerm) {
 		System.out.println("Printing the collection as a table.");
 	}
 	
-	public void PrintCollectionList() {
+	public void PrintCollectionList(String searchTerm) {
 		System.out.println("Printing the table as a list.");
 	}
 	
