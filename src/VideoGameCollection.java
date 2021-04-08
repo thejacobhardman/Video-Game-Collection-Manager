@@ -182,6 +182,17 @@ public class VideoGameCollection
     }
     
     /***********************************************************************
+	 * Method:  DeleteGame                                                  *
+	 * Purpose:  Deletes a game at the specified index.                     *
+	 * Parameters:                                                          *
+	 *    index -- the index value of the game to be deleted.               *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
+    public void DeleteGame(int index) {
+    	this.games.remove(index);
+    }
+    
+    /***********************************************************************
 	 * Method:  SearchByTitle                                               *
 	 * Purpose:  Searches the collection for games that match a title       *
 	 * 			 query made by the user. The games that match are then      *
