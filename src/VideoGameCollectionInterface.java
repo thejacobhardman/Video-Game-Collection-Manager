@@ -20,6 +20,7 @@
 *            input from the user.                                     *
 *   collection -- The VideoGameCollection object that interface       *
 *   			  interacts with and manages.                         *
+*   isRunning -- Tracks whether the interface is still running.       *
 *                                                                     *
 * COPYRIGHT:                                                          *
 * This program is copyright (c)2020 Jacob Hardman and Dean Zeller.    *
@@ -37,6 +38,7 @@ public class VideoGameCollectionInterface {
 	private String selection;    
 	private Scanner input;
 	private VideoGameCollection collection;
+	private boolean isRunning;
 	
 	/************************************************************************
 	 * Method:   Constructor (no parameters)                                *
@@ -55,6 +57,7 @@ public class VideoGameCollectionInterface {
 		validSelections.add("Q");
 		this.selection = "x";
 		this.collection = new VideoGameCollection("My Favorite Games");
+		this.isRunning = true;
 	}
 	
 	/************************************************************************
@@ -85,7 +88,7 @@ public class VideoGameCollectionInterface {
 	public void AcceptUserInput() {
 		boolean validInput = false;
 		while (!validInput) {
-			System.out.print("Selection: ");
+			System.out.print("\nSelection: ");
 			String userInput = this.input.nextLine();
 			
 			if (this.validSelections.contains(userInput.toUpperCase())) {
@@ -105,26 +108,50 @@ public class VideoGameCollectionInterface {
 	 * Return value: None                                                   *
 	 ***********************************************************************/
 	public void ProcessUserInput() {
-		switch (this.selection) {
+		switch (this.selection.toUpperCase()) {
 		case "A":
-			//add a game method
+			AddGame();
 			break;
 		case "D":
-			//delete a game
+			DeleteGame();
 			break;
 		case "P":
-			//print table of games
+			PrintCollection();
 			break;
 		case "S":
-			//search for a game
+			SearchCollection();
 			break;
 		case "Q":
-			//quit game
+			this.isRunning = false;
 			break;
 		default:
 			System.out.println("*FATAL ERROR WHILE PROCESSING USER INPUT*");
 			break;
 		}
+	}
+	
+	public void AddGame() {
+		System.out.println("Adding a new game to the collection.");
+	}
+	
+	public void DeleteGame() {
+		System.out.println("Removing a game from the collection.");
+	}
+	
+	public void PrintCollection() {
+		System.out.println("Printing the collection.");
+	}
+	
+	public void PrintCollectionTable() {
+		System.out.println("Printing the collection as a table.");
+	}
+	
+	public void PrintCollectionList() {
+		System.out.println("Printing the table as a list.");
+	}
+	
+	public void SearchCollection() {
+		System.out.println("Searching the collection.");
 	}
 	
 	/************************************************************************
@@ -136,7 +163,7 @@ public class VideoGameCollectionInterface {
 	 ***********************************************************************/
 	public void RunUntilClose() {
 		this.selection = "x";
-		while (!this.selection.equals("Q")) {
+		while (this.isRunning) {
 			this.DisplayMenu();
 			this.AcceptUserInput();
 			this.ProcessUserInput();
