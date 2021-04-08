@@ -193,84 +193,35 @@ public class VideoGameCollection
     }
     
     /***********************************************************************
-	 * Method:  SearchByTitle                                               *
-	 * Purpose:  Searches the collection for games that match a title       *
-	 * 			 query made by the user. The games that match are then      *
-	 * 			 displayed in an easy to read manner.                       *
+	 * Method:  SearchGames                                                 *
+	 * Purpose:  Searches the collection for games that contain the user    *
+	 *           provided search parameter. Returns the found games in an   *
+	 *           ArrayList of VideoGame objects.                            *
 	 * Parameters:                                                          *
-	 *    title -- the title to search the collection for, as a String.     *
+	 *    searchParam -- the search paramter to search the collection       *
+	 *    				 of games for.                                      *
 	 * Return value: None                                                   *
 	 ***********************************************************************/
-    public void SearchByTitle(String title)
+    public ArrayList<VideoGame> SearchGames(String searchParam)
     {
     	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
         for (int i = 0; i < this.games.size(); i++) {
-        	if (this.getGame(i).getTitle() == title) {
+        	if (this.getGame(i).getTitle().toUpperCase().contains(searchParam.toUpperCase())) {
         		gamesFound.add(this.getGame(i));
         	}
-        }
+        	if (this.getGame(i).getGenre().toUpperCase().contains(searchParam.toUpperCase())) {
+        		gamesFound.add(this.getGame(i));
+        	}
+        	if (this.getGame(i).getDeveloper().toUpperCase().contains(searchParam.toUpperCase())) {
+        		gamesFound.add(this.getGame(i));
+        	}
+        	if (this.getGame(i).getDeveloper() != this.getGame(i).getPublisher()) {
+        		if (this.getGame(i).getPublisher().toUpperCase().contains(searchParam.toUpperCase())) {
+            		gamesFound.add(this.getGame(i));
+            	}
+        	}
+        } 
         
-        System.out.println(MessageFormat.format("\nThere were {0} games found with the title: {1}.\n", gamesFound.size(), title));
-        System.out.println("--------------------------------------------");
-        for (int i = 0; i < gamesFound.size(); i++)
-        {
-            System.out.println((i+1)+": " + gamesFound.get(i).description());
-        }
-        System.out.println("--------------------------------------------");
+        return gamesFound;
     }
-    
-    /***********************************************************************
-	 * Method:  SearchByDeveloper                                           *
-	 * Purpose:  Searches the collection for games that match a developer   *
-	 * 			 query made by the user. The games that match are then      *
-	 * 			 displayed in an easy to read manner.                       *
-	 * Parameters:                                                          *
-	 *    developer -- the developer to search the collection for,          *
-	 *    			   as a String.                                         *
-	 * Return value: None                                                   *
-	 ***********************************************************************/
-    public void SearchByDeveloper(String developer)
-    {
-    	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
-        for (int i = 0; i < this.games.size(); i++) {
-        	if (this.getGame(i).getDeveloper() == developer) {
-        		gamesFound.add(this.getGame(i));
-        	}
-        }
-        
-        System.out.println(MessageFormat.format("\nThere were {0} games found that were made by: {1}.\n", gamesFound.size(), developer));
-        System.out.println("--------------------------------------------");
-        for (int i = 0; i < gamesFound.size(); i++)
-        {
-            System.out.println((i+1)+": " + gamesFound.get(i).description());
-        }
-        System.out.println("--------------------------------------------");
-    }
-    
-    /***********************************************************************
-   	 * Method:  SearchByGenre                                               *
-   	 * Purpose:  Searches the collection for games that match a genre       *
-   	 * 			 query made by the user. The games that match are then      *
-   	 * 			 displayed in an easy to read manner.                       *
-   	 * Parameters:                                                          *
-   	 *    genre -- the genre to search the collection for, as a String.     *
-   	 * Return value: None                                                   *
-   	 ***********************************************************************/
-    public void SearchByGenre(String genre)
-    {
-    	ArrayList<VideoGame> gamesFound = new ArrayList<VideoGame>();
-        for (int i = 0; i < this.games.size(); i++) {
-        	if (this.getGame(i).getGenre() == genre) {
-        		gamesFound.add(this.getGame(i));
-        	}
-        }
-        
-        System.out.println(MessageFormat.format("\nThere were {0} games found in the {1} genre.\n", gamesFound.size(), genre));
-        System.out.println("--------------------------------------------");
-        for (int i = 0; i < gamesFound.size(); i++)
-        {
-            System.out.println((i+1)+": " + gamesFound.get(i).description());
-        }
-        System.out.println("--------------------------------------------");
-    } 
 }
