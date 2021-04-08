@@ -18,6 +18,8 @@
 * 	selection -- The user's input stored as a String.		          *
 *   input -- The scanner property that will be used to accept         *
 *            input from the user.                                     *
+*   collection -- The VideoGameCollection object that interface       *
+*   			  interacts with and manages.                         *
 *                                                                     *
 * COPYRIGHT:                                                          *
 * This program is copyright (c)2020 Jacob Hardman and Dean Zeller.    *
@@ -36,6 +38,13 @@ public class VideoGameCollectionInterface {
 	private Scanner input;
 	private VideoGameCollection collection;
 	
+	/************************************************************************
+	 * Method:   Constructor (no parameters)                                *
+	 * Purpose:  Create an instance of a new interface with default         *
+	 * 	         parameters.                                                *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public VideoGameCollectionInterface() {
 		this.input = new Scanner(System.in);
 		this.validSelections = new ArrayList<String>();
@@ -48,6 +57,12 @@ public class VideoGameCollectionInterface {
 		this.collection = new VideoGameCollection("My Favorite Games");
 	}
 	
+	/************************************************************************
+	 * Method: DisplayMenu                                                  *
+	 * Purpose:  Displays the menu UI.                                      *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void DisplayMenu() {
 		System.out.println("Welcome To The VideoGameCollection Interface Program!");
 		System.out.println("You are currently managing the collection: " + this.collection.getName() + ".");
@@ -60,6 +75,13 @@ public class VideoGameCollectionInterface {
 		System.out.println("'Q' - Quit the program.");
 	}
 	
+	/************************************************************************
+	 * Method: AcceptUserInput                                              *
+	 * Purpose:  Handles accepting and validating user input from the       *
+	 *           console.                                                   *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void AcceptUserInput() {
 		boolean validInput = false;
 		while (!validInput) {
@@ -75,6 +97,13 @@ public class VideoGameCollectionInterface {
 		}
 	}
 	
+	/************************************************************************
+	 * Method: ProcessUserInput                                             *
+	 * Purpose:  Logic that runs different functions based on the user      *
+	 * 			 input collected in AcceptUserInput.                        *
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void ProcessUserInput() {
 		switch (this.selection) {
 		case "A":
@@ -98,6 +127,13 @@ public class VideoGameCollectionInterface {
 		}
 	}
 	
+	/************************************************************************
+	 * Method: RunUntilClose                                                *
+	 * Purpose: Continues to run the interface (accept user input and       *
+	 * 			display output) until the user decides to close the program.*
+	 * Parameters: None                                                     *
+	 * Return value: None                                                   *
+	 ***********************************************************************/
 	public void RunUntilClose() {
 		this.selection = "x";
 		while (!this.selection.equals("Q")) {
